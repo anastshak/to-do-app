@@ -1,18 +1,23 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@styles': path.resolve(__dirname, 'src/styles'),
+    },
+  },
   css: {
     preprocessorOptions: {
       scss: {
-        api: 'modern',
-        silenceDeprecations: ['import'],
+        additionalData: `
+        @use "@styles/mixins" as *;
+        @use "@styles/constants" as *;
+        `,
       },
-    },
-    modules: {
-      localsConvention: 'camelCase',
-    },
-  }
+    }
+  },
 });
