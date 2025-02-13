@@ -8,7 +8,31 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config(
-  { ignores: ['dist'] },
+  {
+    ignores: [
+      'dist',
+      'node_modules',
+      'coverage',
+      '__tests__',
+      'eslint.config.js',
+      '**/*.test.*',
+      '*.js',
+      '*.jsx',
+      '.vscode',
+      '.idea',
+      '.gitignore',
+      '.prettierrc',
+      '.prettierignore',
+      'package.json',
+      'package-lock.json',
+      'tsconfig.app.json',
+      'tsconfig.node.json',
+      '.husky',
+      'tsconfig.json',
+      'vite.config.ts',
+      'README.md',
+    ],
+  },
   {
     extends: [js.configs.recommended, ...tseslint.configs.recommended],
     files: ['**/*.{ts,tsx}'],
@@ -27,12 +51,15 @@ export default tseslint.config(
       ...prettierPlugin.configs.recommended.rules,
       ...eslintConfigPrettier.rules,
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'react-refresh/only-export-components': [
+        'warn',
+        { allowConstantExport: true },
+      ],
       '@typescript-eslint/no-explicit-any': 'error',
       'no-undef': 'error',
       '@typescript-eslint/no-unused-vars': 'off',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
       'prettier/prettier': ['error', { endOfLine: 'auto' }],
     },
-  },
+  }
 );
