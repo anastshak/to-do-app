@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './AddTodo.module.scss';
+import { Input } from '../Input/Input';
 
 //input + button
 export const AddTodo = () => {
@@ -21,12 +22,11 @@ export const AddTodo = () => {
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.itemBlock}>
-        <input
+        <Input
           ref={inputRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           type="text"
-          className={styles.input}
           placeholder="start typing ..."
         />
         <button type="submit" className={styles.btn}>

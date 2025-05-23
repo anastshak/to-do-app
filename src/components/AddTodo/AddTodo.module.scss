@@ -6,20 +6,11 @@
   width: 100%;
   max-width: 32rem;
 
-  .input,
-  .btn {
-    padding: 0.5rem 1.25rem;
-    border-radius: 0.75rem;
-  }
-
-  .input {
-    outline-style: none;
-    width: 100%;
-  }
-
   .btn {
     @include font(1rem, 400, 1.25rem);
 
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.75rem;
     color: $color-black-default;
     background-color: $color-white-default;
   }
