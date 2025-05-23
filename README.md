@@ -4,6 +4,8 @@
 
 TO-DO APP
 
+A classic to-do application that allows you to add tasks and mark completed ones, as well as edit or delete it.
+
 [Link to task tutorial](https://www.freecodecamp.org/news/typescript-tutorial-for-react-developers/)
 
 ## Technologies used
@@ -59,7 +61,7 @@ yarn prettier
 yarn format:fix
 ```
 
-4. For types check
+5. For types check
 
 ```cmd
 yarn types-check
