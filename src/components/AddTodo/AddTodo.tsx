@@ -1,12 +1,15 @@
 import React, { useState, useRef, useEffect } from 'react';
-import styles from './AddTodo.module.scss';
 import { Input } from '../Input/Input';
+import { useTodo } from '../../context/useTodo';
+import toast from 'react-hot-toast';
+
+import styles from './AddTodo.module.scss';
 
 //input + button
 export const AddTodo = () => {
   const [input, setInput] = useState<string>('');
-  const [todos, setTodos] = useState<string[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
+  const { addTodo } = useTodo();
 
   useEffect(() => {
     //focus on input
@@ -18,8 +21,11 @@ export const AddTodo = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (input.trim() !== '') {
-      setTodos([...todos, input]);
+      addTodo(input);
       setInput('');
+      toast.success('Todo added successfully!');
+    } else {
+      toast.error('Todo field cannot be empty!');
     }
   };
 
