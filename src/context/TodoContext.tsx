@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
-// import { nanoid } from 'nanoid'
-// import { useLocalStorage } from 'usehooks-ts'
+import { nanoid } from 'nanoid';
 
 export interface Todo {
   id: string;
@@ -9,18 +8,24 @@ export interface Todo {
 }
 
 interface TodoContextProps {
-  todos: string[];
+  todos: Todo[];
   addTodo: (text: string) => void;
 }
 
 export const TodoContext = createContext<TodoContextProps | undefined>(undefined);
 
 export const TodoProvider = (props: { children: React.ReactNode }) => {
-  const [todos, setTodos] = useState<string[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([]);
 
   // add new todo
   const addTodo = (text: string) => {
-    setTodos([...todos, text]);
+    const newTodo: Todo = {
+      id: nanoid(),
+      text,
+      status: 'undone',
+    };
+
+    setTodos([...todos, newTodo]);
   };
 
   const value: TodoContextProps = {

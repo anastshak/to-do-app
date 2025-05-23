@@ -18,7 +18,7 @@ export const TodoList = () => {
   return (
     <ul className={styles.list}>
       {todos.map((todo) => (
-        <li key={todo}>{todo}</li>
+        <li key={todo.id}>{todo.text}</li>
       ))}
     </ul>
   );
