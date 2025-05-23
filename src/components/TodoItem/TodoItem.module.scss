@@ -1,0 +1,16 @@
+.item {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgb(24, 24, 27);
+  width: 100%;
+}
+
+.itemCompleted {
+  background-color: rgb(113, 113, 122);
+  --tw-bg-opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.itemUndone {
+  text-decoration: none;
+}

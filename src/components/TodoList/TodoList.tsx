@@ -1,5 +1,7 @@
 import { useTodo } from '../../context/useTodo';
 import { SiStarship } from 'react-icons/si';
+import { motion } from 'framer-motion';
+import { TodoItem } from '../TodoItem/TodoItem';
 
 import styles from './TodoList.module.scss';
 
@@ -16,10 +18,10 @@ export const TodoList = () => {
   }
 
   return (
-    <ul className={styles.list}>
+    <motion.ul className={styles.list}>
       {todos.map((todo) => (
-        <li key={todo.id}>{todo.text}</li>
+        <TodoItem todo={todo} key={todo.id} />
       ))}
-    </ul>
+    </motion.ul>
   );
 };
