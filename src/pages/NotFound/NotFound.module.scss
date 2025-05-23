@@ -1,0 +1,22 @@
+.page {
+  @include flex(center, center, column, 2rem);
+  margin: auto;
+
+  .heading {
+    @include font(3rem, 500);
+  }
+
+  .link {
+    @include font(1.5rem, 500);
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 12px;
+    background-color: $btn-green;
+    max-width: fit-content;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      background-color: $btn-green-hover;
+    }
+  }
+}

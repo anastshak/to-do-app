@@ -1,0 +1,14 @@
+.list {
+  max-width: 600px;
+  @include flex(center, flex-start, column, 1rem);
+}
+
+.msgBox {
+  margin-top: 2rem;
+  @include flex(center, center, column, 1.5rem);
+  @include font(1.25rem, 700, 1.75rem);
+
+  .icon {
+    @include font(3rem, 400, 1rem);
+  }
+}

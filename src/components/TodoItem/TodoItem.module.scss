@@ -1,0 +1,60 @@
+.itemWrapper {
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background-color: $bg-item-main;
+  min-width: 400px;
+  width: 100%;
+}
+
+.itemCompleted {
+  background-color: $bg-item-completed;
+  --tw-bg-opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.itemUndone {
+  text-decoration: none;
+}
+
+.itemUpdateMode {
+  @include flex(center, center, row, 0.5rem);
+
+  .btnUpdate {
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.75rem;
+
+    @include font(0.875rem, 400, 1.25rem);
+
+    color: $text-update-btn;
+    background-color: $bg-btn-update;
+
+    &:active {
+      --transform-scale-x: 0.95;
+      --transform-scale-y: 0.95;
+    }
+  }
+}
+
+.item {
+  @include flex(center, center, column, 1.25rem);
+}
+
+.controlBox {
+  @include flex(space-between, center, row);
+  width: 80%;
+  color: $color-white-default;
+
+  .mark,
+  .deleteBtn,
+  .editBtn {
+    @include flex(center, center, row, 0.25rem);
+  }
+
+  .deleteBtn {
+    color: $btn-red;
+  }
+
+  .controlButtons {
+    @include flex(center, center, row, 1rem);
+  }
+}

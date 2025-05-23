@@ -1,0 +1,12 @@
+@use './normalize';
+@use './reset';
+@use './mixins' as *;
+@use './fonts';
+@use './base';
+
+#root {
+  background-color: $bg-main;
+  color: $text-main;
+  @include flex(flex-start, center);
+  padding: 2rem;
+}
